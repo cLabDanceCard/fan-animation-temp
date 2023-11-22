@@ -1,0 +1,109 @@
+.piechart {
+    margin-top: 50px;
+    width: 750px;
+    height: 750px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.pie-slice {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+
+#slice1 {
+    background: conic-gradient(pink 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+}
+
+#slice2 {
+    background: conic-gradient(#ff0000 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(22.5deg);
+}
+
+#slice3 {
+    background: conic-gradient(#ff7f00 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(45deg);
+}
+
+#slice4 {
+    background: conic-gradient(#ffff00 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(67.5deg);
+}
+
+#slice5 {
+    background: conic-gradient(#00ff00 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(90deg);
+}
+
+#slice6 {
+    background: conic-gradient(#00ffff 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(112.5deg);
+}
+
+#slice7 {
+    background: conic-gradient(#0000ff 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(135deg);
+}
+
+#slice8 {
+    background: conic-gradient(#8b00ff 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(157.5deg);
+}
+
+#slice9 {
+    background: conic-gradient(#ff00ff 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(180deg);
+}
+
+#slice10 {
+    background: conic-gradient(#ff0000 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(202.5deg);
+}
+
+#slice11 {
+    background: conic-gradient(#ff7f00 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(225deg);
+}
+
+#slice12 {
+    background: conic-gradient(#ffff00 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(247.5deg);
+}
+
+#slice13 {
+    background: conic-gradient(#00ff00 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(270deg);
+}
+
+#slice14 {
+    background: conic-gradient(#00ffff 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(292.5deg);
+}
+
+#slice15 {
+    background: conic-gradient(#0000ff 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(315deg);
+}
+
+#slice16 {
+    background: conic-gradient(#8b00ff 0deg 22.5deg, transparent 22.5deg 360deg);
+    clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(337.5deg);
+}
