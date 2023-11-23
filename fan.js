@@ -1,21 +1,32 @@
-function toggleFanSide(side) {
-    var fan = document.getElementById('fan-svg');
-    var paths = fan.querySelectorAll('path.' + side);
-    
-    paths.forEach((path) => {
-        if (path.style.transform === 'scale(0)') {
-            path.style.transform = '';
-        } else {
-            path.style.transform = 'scale(0)';
-            path.style.transformOrigin = '16px 16px';
-        }
+// script.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    var bar1 = document.getElementById('bar1');
+    var bar2 = document.getElementById('bar2');
+
+    bar1.addEventListener('click', function() {
+        var leftSlices = document.querySelectorAll('.pie-slice.left');
+        leftSlices.forEach(function(slice) {
+            if (slice.style.display === 'block' || getComputedStyle(slice).display === 'block') {
+                slice.style.display = 'none';
+                slice.style.border = 'none';
+            } else {
+                slice.style.display = 'block';
+                slice.style.border = '2px solid black';
+            }
+        });
     });
-}
 
-document.getElementById('left-handle').addEventListener('click', function() {
-    toggleFanSide('left');
-});
-
-document.getElementById('right-handle').addEventListener('click', function() {
-    toggleFanSide('right');
+    bar2.addEventListener('click', function() {
+        var rightSlices = document.querySelectorAll('.pie-slice.right');
+        rightSlices.forEach(function(slice) {
+            if (slice.style.display === 'block' || getComputedStyle(slice).display === 'block') {
+                slice.style.display = 'none';
+                slice.style.border = 'none';
+            } else {
+                slice.style.display = 'block';
+                slice.style.border = '2px solid black';
+            }
+        });
+    });
 });
