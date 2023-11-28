@@ -1,11 +1,9 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", function() {
     var bar1 = document.getElementById('bar1');
     var bar2 = document.getElementById('bar2');
 
     bar1.addEventListener('click', function() {
-        var leftSlices = document.querySelectorAll('.pie-slice.left');
+        var leftSlices = document.querySelectorAll('.left');
         leftSlices.forEach(function(slice) {
             if (slice.style.display === 'block' || getComputedStyle(slice).display === 'block') {
                 slice.style.display = 'none';
@@ -15,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 slice.style.border = '2px solid black';
             }
         });
+        
     });
 
     bar2.addEventListener('click', function() {
