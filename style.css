@@ -2,11 +2,12 @@
     margin-top: 50px;
     width: 750px;
     height: 750px;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     position: relative;
 }
-
 
 .center-bar {
     position: absolute;
@@ -38,28 +39,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white; /* Set the background color to white */
-    border: 2px solid black; /* Add a black border */
+    background: white;
+    border: 2px solid black; 
 }
 
-
-.slice-text {
+#duck1 {
     position: absolute;
-    transform: rotate(-var(--rotate)); /* Adjust rotation if needed */
-    transform-origin: center;
-    white-space: nowrap;
-    color: black; /* Ensure contrast */
-    font-weight: bold;
-    font-size: 16px; /* Adjust size as needed */
-    z-index: 10; /* Bring text to the front */
+    top: 200px;
+    left: 650px;
+    right: 500px;
+    width: 200px;
+    height: 200px;
+    transform: scale(2);
 }
 
-#slice1 .slice-text {
-    --rotate: 0deg;
+#duck2 {
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    right: 500px;
+    width: 200px;
+    height: 200px;
+    transform: scale(2);
+}
+
+#tree1 {
+    position: absolute;
+    top: 200px;
+    left: 485px;
+    right: 500px;
+    width: 200px;
+    height: 200px;
+    transform: scale(2);
 }
 
 #slice1 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
 }
 
@@ -70,7 +85,7 @@
 }
 
 #slice3 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(45deg);
 }
@@ -82,7 +97,7 @@
 }
 
 #slice5 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(90deg);
 }
@@ -94,7 +109,7 @@
 }
 
 #slice7 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(135deg);
 }
@@ -106,7 +121,7 @@
 }
 
 #slice9 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(180deg);
 }
@@ -118,7 +133,7 @@
 }
 
 #slice11 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(225deg);
 }
@@ -130,7 +145,7 @@
 }
 
 #slice13 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(270deg);
 }
@@ -142,7 +157,7 @@
 }
 
 #slice15 {
-    background: conic-gradient(black 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(315deg);
 }
