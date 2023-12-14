@@ -1,31 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var bar1 = document.getElementById('bar1');
-    var bar2 = document.getElementById('bar2');
+var leftBar = document.getElementById("bar1");
+var rightBar = document.getElementById("bar2");
 
-    bar1.addEventListener('click', function() {
-        var leftSlices = document.querySelectorAll('.left');
-        leftSlices.forEach(function(slice) {
-            if (slice.style.display === 'block' || getComputedStyle(slice).display === 'block') {
-                slice.style.display = 'none';
-                slice.style.border = 'none';
-            } else {
-                slice.style.display = 'block';
-                slice.style.border = '2px solid black';
-            }
-        });
-        
-    });
+var allSlices = document.querySelectorAll(".pie-slice");
 
-    bar2.addEventListener('click', function() {
-        var rightSlices = document.querySelectorAll('.pie-slice.right');
-        rightSlices.forEach(function(slice) {
-            if (slice.style.display === 'block' || getComputedStyle(slice).display === 'block') {
-                slice.style.display = 'none';
-                slice.style.border = 'none';
-            } else {
-                slice.style.display = 'block';
-                slice.style.border = '2px solid black';
-            }
-        });
-    });
+leftBar.addEventListener("click", function () {
+	allSlices.forEach(function (slice) {
+        if (slice.classList.contains("left-border")){
+            slice.style.border = slice.style.border === "none" ? "flex" : "none";
+        }
+        else if (slice.classList.contains("left")) {
+            slice.style.display = slice.style.display === "none" ? "flex" : "none";
+        }
+	});
+});
+
+rightBar.addEventListener("click", function () {
+	allSlices.forEach(function (slice) {
+        if (slice.classList.contains("right-border")){
+            console.log("right border")
+            slice.style.border = slice.style.border === "none" ? "flex" : "none";
+        }
+        else if (slice.classList.contains("right")) {
+            console.log("right")
+            slice.style.display = slice.style.display === "none" ? "flex" : "none";
+        }
+	});
 });

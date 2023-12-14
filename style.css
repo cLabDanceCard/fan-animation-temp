@@ -76,6 +76,7 @@
 #slice1 {
     background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
+    transform: rotate(0deg);
 }
 
 #slice2 {
