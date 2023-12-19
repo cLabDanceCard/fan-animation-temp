@@ -1,3 +1,7 @@
+* {
+    font-family: 'SF Pro Display', sans-serif;
+
+}
 .piechart {
     margin-top: 50px;
     width: 750px;
@@ -167,4 +171,107 @@
     background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(337.5deg);
+}
+
+.emoji {
+    font-size: 15px; /* Adjusts the size of the emoji */
+    width: 35px; /* Width of the icon */
+    height: 35px; /* Height of the icon */
+    line-height: 35px; /* Centers the emoji vertically */
+    text-align: center; /* Centers the emoji horizontally */
+    border-radius: 50%; /* Makes the icon circular */
+    background-color: white; /* Background color */
+    border: 2px solid black; /* Border around the icon */
+    z-index: 20;
+}
+
+#bunny-left {
+    position: absolute;
+    top: 120px;
+    left: 260px;
+}
+
+#bunny-right {
+    position: absolute;
+    top: 120px;
+    left: 450px;
+}
+
+#cat-left {
+    position: absolute;
+    top: 120px;
+    left: 285px;
+}
+
+#cat-right {
+    position: absolute;
+    top: 120px;
+    left: 425px;
+}
+
+#dog-left {
+    position: absolute;
+    top: 170px;
+    left: 200px;
+}
+
+#dog-right {
+    position: absolute;
+    top: 170px;
+    left: 500px;
+
+}
+
+#duck-left {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+}
+
+#bear-left {
+    position: absolute;
+    top: 425px;
+    left: 50px;
+}
+
+#dog-left {
+    position: absolute;
+    top: 170px;
+    left: 200px;
+}
+
+#duck-left {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+}
+
+#bear-left {
+    position: absolute;
+    top: 425px;
+    left: 50px;
+}
+
+#frog-left {
+    position: absolute;
+    top: 500px;
+    left: 50px;
+}
+
+#penguin-left {
+    position: absolute;
+    top: 625px;
+    left: 100px;
+}
+
+#butterfly-left {
+    position: absolute;
+    top: 750px;
+    left: 200px;
+}
+
+#panda-left {
+    position: absolute;
+    top: 775px;
+    left: 275px;
 }
