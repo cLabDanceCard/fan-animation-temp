@@ -25,13 +25,9 @@ rightBar.addEventListener("click", function () {
 	});
 });
 
-var apiUrl;
+const apiUrl = window.location.hostname === 'localhost' ? "http://localhost:9000" : "https://peerjsserver-jc6u.onrender.com";
 
-if (window.location.hostname === 'localhost') {
-    apiUrl = "http://localhost:9000";
-} else {
-    apiUrl = "https://peerjsserver-jc6u.onrender.com";
-}
+var socket = io(apiUrl, { withCredentials: true });
 
 const welcomeElement = document.getElementById('welcomeText');
 
