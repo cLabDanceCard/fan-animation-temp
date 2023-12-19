@@ -187,38 +187,38 @@
 
 #bunny-left {
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: 260px;
 }
 
 #bunny-right {
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: 450px;
 }
 
-#cat-left {
+#one-left {
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: 285px;
 }
 
-#cat-right {
+/* #cat-right {
     position: absolute;
-    top: 120px;
-    left: 425px;
-}
+    top: 130px;
+    left: 4335px;
+} */
 
 #dog-left {
     position: absolute;
-    top: 170px;
+    top: 200px;
     left: 200px;
 }
 
 #dog-right {
     position: absolute;
-    top: 170px;
-    left: 500px;
+    top: 200px;
+    left: 550px;
 
 }
 
@@ -234,43 +234,43 @@
     left: 50px;
 }
 
-#dog-left {
+#two-left {
     position: absolute;
-    top: 170px;
-    left: 200px;
+    top: 190px;
+    left: 175px;
 }
 
-#duck-left {
+#three-left {
     position: absolute;
-    top: 300px;
+    top: 285px;
     left: 100px;
 }
 
-#bear-left {
+#four-left {
     position: absolute;
-    top: 425px;
+    top: 400px;
     left: 50px;
 }
 
-#frog-left {
+#five-left {
     position: absolute;
-    top: 500px;
+    top: 510px;
     left: 50px;
 }
 
-#penguin-left {
+#six-left {
     position: absolute;
     top: 625px;
     left: 100px;
 }
 
-#butterfly-left {
+#seven-left {
     position: absolute;
-    top: 750px;
-    left: 200px;
+    top: 725px;
+    left: 175px;
 }
 
-#panda-left {
+#eight-left {
     position: absolute;
     top: 775px;
     left: 275px;
