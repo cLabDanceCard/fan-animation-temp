@@ -4,15 +4,20 @@ var rightBar = document.getElementById("bar2");
 var allSlices = document.querySelectorAll("*");
 
 leftBar.addEventListener("click", function () {
-	allSlices.forEach(function (slice) {
-        if (slice.classList.contains("left-border")){
+    allSlices.forEach(function (slice) {
+        if (slice.classList.contains("left-border")) {
             slice.style.border = slice.style.border === "none" ? "" : "none";
+        } else if (slice.classList.contains("left")) {
+            if (slice.classList.contains("emoji") && slice.textContent.trim() !== '') {
+                slice.style.display = slice.style.display === "none" ? "" : "none";
+            }
+            else if (!slice.classList.contains("emoji")) {
+                slice.style.display = slice.style.display === "none" ? "" : "none";
+            }
         }
-        else if (slice.classList.contains("left")) {
-            slice.style.display = slice.style.display === "none" ? "" : "none";
-        }
-	});
+    });
 });
+
 
 rightBar.addEventListener("click", function () {
 	allSlices.forEach(function (slice) {
@@ -25,19 +30,13 @@ rightBar.addEventListener("click", function () {
 	});
 });
 
-var apiUrl;
+const apiUrl = window.location.hostname === 'localhost' ? "http://localhost:9000" : "https://peerjsserver-jc6u.onrender.com";
 
-if (window.location.hostname === 'localhost') {
-    apiUrl = "http://localhost:9000";
-} else {
-    apiUrl = "https://peerjsserver-jc6u.onrender.com";
-}
+var socket = io(apiUrl, { withCredentials: true });
 
 const welcomeElement = document.getElementById('welcomeText');
 
 var currentUserEmoji = null; 
-
-var socket = io(apiUrl, { withCredentials: true });
 
 socket.on('assignEmoji', function(emoji) {
     console.log('Assigned Emoji:', emoji);
@@ -45,25 +44,32 @@ socket.on('assignEmoji', function(emoji) {
 });
 
 socket.on('onlineUsers', function(onlineUsers) {
-    document.querySelectorAll('.emoji.left').forEach(el => el.textContent = '');
-
     const emojiElementIds = ['one-left', 'two-left', 'three-left', 'four-left', 'five-left', 'six-left', 'seven-left', 'eight-left'];
 
-    const otherUsersEmojis = Object.values(onlineUsers).filter(emoji => emoji !== currentUserEmoji);
+    const otherUsersEmojis = Object.values(onlineUsers);
 
-    otherUsersEmojis.forEach((emoji, index) => {
-        if (index < emojiElementIds.length) {
-            const emojiElement = document.getElementById(emojiElementIds[index]);
-            if (emojiElement) {
+    emojiElementIds.forEach((id, index) => {
+        const emojiElement = document.getElementById(id);
+        if (emojiElement) {
+            const emoji = otherUsersEmojis[index];
+            if (emoji && emoji.trim() !== '') {
                 emojiElement.textContent = emoji;
+                emojiElement.style.display = '';
+            } else {
+                emojiElement.style.display = 'none';
             }
         }
     });
-})
+});
 
 socket.on('noEmojiAvailable', function() {
     console.log('No emoji available');
-    updateWelcomeEmoji('Maximum number of users reached. Please wait');});
+    updateWelcomeEmoji('Maximum number of users reached. Please wait');
+});
+
+window.addEventListener("beforeunload", function (event) {
+    socket.emit('clientDisconnecting', { socketId: socket.id });
+});
 
 function updateWelcomeEmoji(emoji) {
     if (welcomeElement) {
