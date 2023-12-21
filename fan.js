@@ -45,7 +45,7 @@ socket.on('onlineUsers', function(onlineUsers) {
 
     const emojiElementIds = ['one-left', 'two-left', 'three-left', 'four-left', 'five-left', 'six-left', 'seven-left', 'eight-left'];
 
-    const otherUsersEmojis = Object.values(onlineUsers).filter(emoji => emoji !== currentUserEmoji);
+    const otherUsersEmojis = Object.values(onlineUsers);
 
     otherUsersEmojis.forEach((emoji, index) => {
         if (index < emojiElementIds.length) {
@@ -59,7 +59,8 @@ socket.on('onlineUsers', function(onlineUsers) {
 
 socket.on('noEmojiAvailable', function() {
     console.log('No emoji available');
-    updateWelcomeEmoji('Maximum number of users reached. Please wait');});
+    updateWelcomeEmoji('Maximum number of users reached. Please wait');
+});
 
 function updateWelcomeEmoji(emoji) {
     if (welcomeElement) {
