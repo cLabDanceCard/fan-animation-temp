@@ -81,7 +81,7 @@ function updateWelcomeEmoji(emoji) {
 var emojis = document.getElementsByClassName("emoji left");
 
 for (var i = 0; i < emojis.length; i++) {
-    emojis[i].addEventListener("click", function (event) {
-        console.log(event.target);
+    emojis[i].addEventListener("click", function () {
+        console.log('Emoji clicked:', this.textContent);
     });
-}
+}   
