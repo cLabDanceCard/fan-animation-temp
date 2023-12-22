@@ -18,16 +18,19 @@ leftBar.addEventListener("click", function () {
     });
 });
 
-
 rightBar.addEventListener("click", function () {
-	allSlices.forEach(function (slice) {
-        if (slice.classList.contains("right-border")){
+    allSlices.forEach(function (slice) {
+        if (slice.classList.contains("right-border")) {
             slice.style.border = slice.style.border === "none" ? "" : "none";
+        } else if (slice.classList.contains("right")) {
+            if (slice.classList.contains("emoji")) {
+                slice.style.display = (slice.textContent.trim() !== '' && slice.style.display === "none") ? "inline" : "none";
+            }
+            else {
+                slice.style.display = slice.style.display === "none" ? "" : "none";
+            }
         }
-        else if (slice.classList.contains("right")) {
-            slice.style.display = slice.style.display === "none" ? "" : "none";
-        }
-	});
+    });
 });
 
 const apiUrl = window.location.hostname === 'localhost' ? "http://localhost:9000" : "https://peerjsserver-jc6u.onrender.com";
@@ -67,7 +70,7 @@ socket.on('noEmojiAvailable', function() {
     updateWelcomeEmoji('Maximum number of users reached. Please wait');
 });
 
-window.addEventListener("beforeunload", function (event) {
+window.addEventListener("beforeunload", function () {
     socket.emit('clientDisconnecting', { socketId: socket.id });
 });
 
@@ -77,12 +80,15 @@ function updateWelcomeEmoji(emoji) {
     }
     currentUserEmoji = emoji;
 }
+
 var emojis = document.getElementsByClassName("emoji left");
 
 for (var i = 0; i < emojis.length; i++) {
     emojis[i].addEventListener("click", function () {
         console.log('Emoji clicked:', this.textContent);
         var emojiRight;
+        console.log('Current user emoji: ', currentUserEmoji);
+        console.log('Emoji clicked: ', this.textContent);
         switch (this.id) {
             case 'one-left':
                 emojiRight = document.getElementById('one-right');
