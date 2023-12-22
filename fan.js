@@ -77,11 +77,50 @@ function updateWelcomeEmoji(emoji) {
     }
     currentUserEmoji = emoji;
 }
-
 var emojis = document.getElementsByClassName("emoji left");
 
 for (var i = 0; i < emojis.length; i++) {
     emojis[i].addEventListener("click", function () {
         console.log('Emoji clicked:', this.textContent);
+        var emojiRight;
+        switch (this.id) {
+            case 'one-left':
+                emojiRight = document.getElementById('one-right');
+                break;
+            case 'two-left':
+                emojiRight = document.getElementById('two-right');
+                break;
+            case 'three-left':
+                emojiRight = document.getElementById('three-right');
+                break;
+            case 'four-left':
+                emojiRight = document.getElementById('four-right');
+                break;
+            case 'five-left':
+                emojiRight = document.getElementById('five-right');
+                break;
+            case 'six-left':
+                emojiRight = document.getElementById('six-right');
+                break;
+            case 'seven-left':
+                emojiRight = document.getElementById('seven-right');
+                break;
+            case 'eight-left':
+                emojiRight = document.getElementById('eight-right');
+                break;
+            default:
+                console.log('default');
+                return;
+        }
+
+        if (emojiRight) {
+            if (this.textContent.trim() !== '') {
+                emojiRight.textContent = this.textContent;
+                emojiRight.style.display = 'inline';
+            } else {
+                emojiRight.style.display = 'none';
+            }
+            console.log(emojiRight.id + ' clicked');
+        }
     });
-}   
+}
