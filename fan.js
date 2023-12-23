@@ -82,32 +82,41 @@ for (var i = 0; i < emojis.length; i++) {
     emojis[i].addEventListener("click", function () {
         console.log('Emoji clicked:', this.textContent);
         var emojiRight;
+        var emojiLeftPaired;
         console.log('Current user emoji: ', currentUserEmoji);
         console.log('Emoji clicked: ', this.textContent);
         switch (this.id) {
             case 'one-left':
                 emojiRight = document.getElementById('one-right');
+                emojiLeftPaired = document.getElementById('one-left-paired');
                 break;
             case 'two-left':
                 emojiRight = document.getElementById('two-right');
+                emojiLeftPaired = document.getElementById('two-left-paired');
                 break;
             case 'three-left':
                 emojiRight = document.getElementById('three-right');
+                emojiLeftPaired = document.getElementById('three-left-paired');
                 break;
             case 'four-left':
                 emojiRight = document.getElementById('four-right');
+                emojiLeftPaired = document.getElementById('four-left-paired');
                 break;
             case 'five-left':
                 emojiRight = document.getElementById('five-right');
+                emojiLeftPaired = document.getElementById('five-left-paired');
                 break;
             case 'six-left':
                 emojiRight = document.getElementById('six-right');
+                emojiLeftPaired = document.getElementById('six-left-paired');
                 break;
             case 'seven-left':
                 emojiRight = document.getElementById('seven-right');
+                emojiLeftPaired = document.getElementById('seven-left-paired');
                 break;
             case 'eight-left':
                 emojiRight = document.getElementById('eight-right');
+                emojiLeftPaired = document.getElementById('eight-left-paired');
                 break;
             default:
                 console.log('default');
@@ -118,8 +127,11 @@ for (var i = 0; i < emojis.length; i++) {
             if (this.textContent.trim() !== '') {
                 emojiRight.textContent = this.textContent;
                 emojiRight.style.display = 'inline';
+                emojiLeftPaired.textContent = currentUserEmoji;
+                emojiLeftPaired.style.display = 'inline';
             } else {
                 emojiRight.style.display = 'none';
+                emojiLeftPaired.style.display = 'none';
             }
             console.log(emojiRight.id + ' clicked');
         }
