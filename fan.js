@@ -8,7 +8,12 @@ leftBar.addEventListener("click", function () {
         if (slice.classList.contains("left-border")) {
             slice.style.border = slice.style.border === "none" ? "" : "none";
         } else if (slice.classList.contains("left")) {
+            if (slice.classList.contains("emoji")) {
+                slice.style.display = (slice.textContent.trim() !== '' && slice.style.display === "none") ? "inline" : "none";
+            }
+            else {
                 slice.style.display = slice.style.display === "none" ? "" : "none";
+            }
         }
     });
 });
