@@ -90,43 +90,54 @@ for (var i = 0; i < emojis.length; i++) {
         var emojiLeftPaired;
         console.log('Current user emoji: ', currentUserEmoji);
         console.log('Emoji clicked: ', this.textContent);
+        let slot = -1;
         switch (this.id) {
             case 'one-left':
                 emojiRight = document.getElementById('one-right');
                 emojiLeftPaired = document.getElementById('one-left-paired');
+                slot = 0;
                 break;
             case 'two-left':
                 emojiRight = document.getElementById('two-right');
                 emojiLeftPaired = document.getElementById('two-left-paired');
+                slot = 1;
                 break;
             case 'three-left':
                 emojiRight = document.getElementById('three-right');
                 emojiLeftPaired = document.getElementById('three-left-paired');
+                slot = 2;
                 break;
             case 'four-left':
                 emojiRight = document.getElementById('four-right');
                 emojiLeftPaired = document.getElementById('four-left-paired');
+                slot = 3;
                 break;
             case 'five-left':
                 emojiRight = document.getElementById('five-right');
                 emojiLeftPaired = document.getElementById('five-left-paired');
+                slot = 4;
                 break;
             case 'six-left':
                 emojiRight = document.getElementById('six-right');
                 emojiLeftPaired = document.getElementById('six-left-paired');
+                slot = 5;
                 break;
             case 'seven-left':
                 emojiRight = document.getElementById('seven-right');
                 emojiLeftPaired = document.getElementById('seven-left-paired');
+                slot = 6;
                 break;
             case 'eight-left':
                 emojiRight = document.getElementById('eight-right');
                 emojiLeftPaired = document.getElementById('eight-left-paired');
+                slot = 7;
                 break;
             default:
                 console.log('default');
                 return;
         }
+
+        socket.emit('emojiClicked', { emoji: this.textContent, socketId: socket.id, slot: slot});
 
         if (emojiRight) {
             if (this.textContent.trim() !== '') {
