@@ -78,7 +78,7 @@
 }
 
 #slice1 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(0deg);
 }
@@ -90,7 +90,7 @@
 }
 
 #slice3 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(45deg);
 }
@@ -102,7 +102,7 @@
 }
 
 #slice5 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(90deg);
 }
@@ -114,7 +114,7 @@
 }
 
 #slice7 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(135deg);
 }
@@ -132,7 +132,7 @@
 }
 
 #slice10 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(202.5deg);
 }
@@ -144,7 +144,7 @@
 }
 
 #slice12 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(247.5deg);
 }
@@ -156,7 +156,7 @@
 }
 
 #slice14 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(292.5deg);
 }
@@ -168,7 +168,7 @@
 }
 
 #slice16 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(337.5deg);
 }
