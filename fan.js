@@ -137,14 +137,16 @@ for (var i = 0; i < emojis.length; i++) {
                 return;
         }
 
-        socket.emit('emojiClicked', { emoji: this.textContent, socketId: socket.id, slot: slot});
+        socket.emit('emojiClicked', { callReceiverEmoji: this.textContent, 
+                                      callSenderEmoji: currentUserEmoji,
+                                      callSenderId: socket.id,
+                                      slot: slot
+                                    });
 
         if (emojiRight) {
             if (this.textContent.trim() !== '') {
                 emojiRight.textContent = this.textContent;
                 emojiRight.style.display = 'inline';
-                emojiLeftPaired.textContent = currentUserEmoji;
-                emojiLeftPaired.style.display = 'inline';
             } else {
                 emojiRight.style.display = 'none';
                 emojiLeftPaired.style.display = 'none';
@@ -153,3 +155,25 @@ for (var i = 0; i < emojis.length; i++) {
         }
     });
 }
+
+function updateLeftHandSchedule(schedule) {
+    const emojiElementIds = ['one-left-paired', 'two-left-paired', 'three-left-paired', 'four-left-paired', 'five-left-paired', 'six-left-paired', 'seven-left-paired', 'eight-left-paired'];
+    
+    schedule.forEach((call, index) => {
+        const emojiElement = document.getElementById(emojiElementIds[index]);
+        if (emojiElement) {
+            if (call.id1 && call.id1.trim() !== '') {
+                emojiElement.textContent = call.id1;
+                emojiElement.style.display = 'inline';
+            } else {
+                emojiElement.style.display = 'none';
+            }
+        }
+    });
+}
+
+
+socket.on('newCallScheduled', (schedule) => {
+    console.log('Schedule: ', schedule);
+    updateLeftHandSchedule(schedule);
+});
