@@ -78,7 +78,7 @@
 }
 
 #slice1 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(0deg);
 }
@@ -90,7 +90,7 @@
 }
 
 #slice3 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(45deg);
 }
@@ -102,7 +102,7 @@
 }
 
 #slice5 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(90deg);
 }
@@ -114,7 +114,7 @@
 }
 
 #slice7 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(135deg);
 }
@@ -132,7 +132,7 @@
 }
 
 #slice10 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(202.5deg);
 }
@@ -144,7 +144,7 @@
 }
 
 #slice12 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(247.5deg);
 }
@@ -156,7 +156,7 @@
 }
 
 #slice14 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(292.5deg);
 }
@@ -168,7 +168,7 @@
 }
 
 #slice16 {
-    background: conic-gradient(#9198aa 0deg 22.5deg, transparent 22.5deg 360deg);
+    background: conic-gradient(#D2B48C 0deg 22.5deg, transparent 22.5deg 360deg);
     clip-path: polygon(50% 50%, 0 0, 100% 0);
     transform: rotate(337.5deg);
 }
@@ -203,6 +203,13 @@
     left: 285px;
 }
 
+#one-left-paired {
+    position: absolute;
+    top: 130px;
+    left: 310px;
+    display: none;
+}
+
 #one-right {
     position: absolute;
     top: 130px;
@@ -214,6 +221,13 @@
     position: absolute;
     top: 190px;
     left: 175px;
+}
+
+#two-left-paired {
+    position: absolute;
+    top: 190px;
+    left: 200px;
+    display: none;
 }
 
 #two-right {
@@ -229,6 +243,13 @@
     left: 100px;
 }
 
+#three-left-paired {
+    position: absolute;
+    top: 285px;
+    left: 125px;
+    display: none;
+}
+
 #three-right {
     position: absolute;
     top: 285px;
@@ -240,6 +261,13 @@
     position: absolute;
     top: 400px;
     left: 50px;
+}
+
+#four-left-paired {
+    position: absolute;
+    top: 400px;
+    left: 75px;
+    display: none;
 }
 
 #four-right {
@@ -255,6 +283,13 @@
     left: 50px;
 }
 
+#five-left-paired {
+    position: absolute;
+    top: 510px;
+    left: 75px;
+    display: none;
+}
+
 #five-right {
     position: absolute;
     top: 510px;
@@ -266,6 +301,13 @@
     position: absolute;
     top: 625px;
     left: 100px;
+}
+
+#six-left-paired {
+    position: absolute;
+    top: 625px;
+    left: 125px;
+    display: none;
 }
 
 #six-right {
@@ -281,6 +323,13 @@
     left: 175px;
 }
 
+#seven-left-paired {
+    position: absolute;
+    top: 725px;
+    left: 200px;
+    display: none;
+}
+
 #seven-right {
     position: absolute;
     top: 725px;
@@ -292,6 +341,13 @@
     position: absolute;
     top: 775px;
     left: 275px;
+}
+
+#eight-left-paired {
+    position: absolute;
+    top: 775px;
+    left: 300px;
+    display: none;
 }
 
 #eight-right {

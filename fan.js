@@ -8,7 +8,12 @@ leftBar.addEventListener("click", function () {
         if (slice.classList.contains("left-border")) {
             slice.style.border = slice.style.border === "none" ? "" : "none";
         } else if (slice.classList.contains("left")) {
+            if (slice.classList.contains("emoji")) {
+                slice.style.display = (slice.textContent.trim() !== '' && slice.style.display === "none") ? "inline" : "none";
+            }
+            else {
                 slice.style.display = slice.style.display === "none" ? "" : "none";
+            }
         }
     });
 });
@@ -82,37 +87,61 @@ for (var i = 0; i < emojis.length; i++) {
     emojis[i].addEventListener("click", function () {
         console.log('Emoji clicked:', this.textContent);
         var emojiRight;
+        var emojiLeftPaired;
         console.log('Current user emoji: ', currentUserEmoji);
         console.log('Emoji clicked: ', this.textContent);
+        let slot = -1;
         switch (this.id) {
             case 'one-left':
                 emojiRight = document.getElementById('one-right');
+                emojiLeftPaired = document.getElementById('one-left-paired');
+                slot = 0;
                 break;
             case 'two-left':
                 emojiRight = document.getElementById('two-right');
+                emojiLeftPaired = document.getElementById('two-left-paired');
+                slot = 1;
                 break;
             case 'three-left':
                 emojiRight = document.getElementById('three-right');
+                emojiLeftPaired = document.getElementById('three-left-paired');
+                slot = 2;
                 break;
             case 'four-left':
                 emojiRight = document.getElementById('four-right');
+                emojiLeftPaired = document.getElementById('four-left-paired');
+                slot = 3;
                 break;
             case 'five-left':
                 emojiRight = document.getElementById('five-right');
+                emojiLeftPaired = document.getElementById('five-left-paired');
+                slot = 4;
                 break;
             case 'six-left':
                 emojiRight = document.getElementById('six-right');
+                emojiLeftPaired = document.getElementById('six-left-paired');
+                slot = 5;
                 break;
             case 'seven-left':
                 emojiRight = document.getElementById('seven-right');
+                emojiLeftPaired = document.getElementById('seven-left-paired');
+                slot = 6;
                 break;
             case 'eight-left':
                 emojiRight = document.getElementById('eight-right');
+                emojiLeftPaired = document.getElementById('eight-left-paired');
+                slot = 7;
                 break;
             default:
                 console.log('default');
                 return;
         }
+
+        socket.emit('emojiClicked', { callReceiverEmoji: this.textContent, 
+                                      callSenderEmoji: currentUserEmoji,
+                                      callSenderId: socket.id,
+                                      slot: slot
+                                    });
 
         if (emojiRight) {
             if (this.textContent.trim() !== '') {
@@ -120,8 +149,31 @@ for (var i = 0; i < emojis.length; i++) {
                 emojiRight.style.display = 'inline';
             } else {
                 emojiRight.style.display = 'none';
+                emojiLeftPaired.style.display = 'none';
             }
             console.log(emojiRight.id + ' clicked');
         }
     });
 }
+
+function updateLeftHandSchedule(schedule) {
+    const emojiElementIds = ['one-left-paired', 'two-left-paired', 'three-left-paired', 'four-left-paired', 'five-left-paired', 'six-left-paired', 'seven-left-paired', 'eight-left-paired'];
+    
+    schedule.forEach((call, index) => {
+        const emojiElement = document.getElementById(emojiElementIds[index]);
+        if (emojiElement) {
+            if (call.id1 && call.id1.trim() !== '') {
+                emojiElement.textContent = call.id1;
+                emojiElement.style.display = 'inline';
+            } else {
+                emojiElement.style.display = 'none';
+            }
+        }
+    });
+}
+
+
+socket.on('newCallScheduled', (schedule) => {
+    console.log('Schedule: ', schedule);
+    updateLeftHandSchedule(schedule);
+});
